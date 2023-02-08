@@ -3,7 +3,12 @@ package generator
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func NewGenerator(countryCode string, bankCode string) *Generator {
 	return &Generator{countryCode: countryCode, bankCode: bankCode}
